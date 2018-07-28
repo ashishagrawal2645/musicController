@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "express": "^4.16.3",
-    "puppeteer": "^1.6.1",
+    "puppeteer": "git+https://github.com/ashishagrawal2645/puppeteer.git",
     "request": "^2.87.0"
   }
 }
