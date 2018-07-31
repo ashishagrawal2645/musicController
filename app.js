@@ -53,13 +53,49 @@ app.get('/next', (req, res) => {
 	})();
 })
 
+app.get('/favorite', (req, res) => {
+	(async () => {
+		var result = await saavnPage.evaluate(() => {
+		    const element = document.querySelector('#now-playing-extras .drop .star');
+		    console.log(element);
+		    if (element.innerText.indexOf('Starred') >= 0) {
+		    	return "Already a favorite"
+		    } else if (element.innerText.indexOf('Star') >= 0) {
+		    	element.click();
+		    	return "Added to favorites";
+		    } else{
+		    	return "Error"
+		    }
+		});
+		res.status(200).send(result);
+	})();
+})
+
+app.get('/unfavorite', (req, res) => {
+	(async () => {
+		var result = await saavnPage.evaluate(() => {
+		    const element = document.querySelector('#now-playing-extras .drop .star');
+		    console.log(element);
+		    if (element.innerText.indexOf('Starred') >= 0) {
+		    	element.click();
+		    	return "Removed from favorites";
+		    } else if (element.innerText.indexOf('Star') >= 0) {
+		    	return "Not your favorite"
+		    } else{
+		    	return "Error"
+		    }
+		});
+		res.status(200).send(result);
+	})();
+})
+
 app.get('/stop', (req, res) => {
 	saavnPage.close();
 	res.status(200).send('Ok');
 	process.exit(1);
 })
 
-app.get('/start', (req, res) => {
+app.get('/connect', (req, res) => {
 	request('http://localhost:9222/json/version', (error, response, body) => {
 		body = JSON.parse(body);
 		(async () => {
