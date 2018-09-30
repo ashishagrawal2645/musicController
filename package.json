@@ -8,15 +8,14 @@
   },
   "bin": {
     "saavn": "./cli.js",
-    "saavn-scripts": "./scripts.js",
-    "connect": "./scripts.js connect",
-    "play": "./scripts.js play",
-    "pause": "./scripts.js pause",
-    "prev": "./scripts.js prev",
-    "next": "./scripts.js next",
-    "fav": "./scripts.js fav",
-    "unfav": "./scripts.js unfav",
-    "stop": "./scripts.js stop"
+    "connect": "./connect.js",
+    "play": "./play.js",
+    "pause": "./pause.js",
+    "prev": "./prev.js",
+    "next": "./next.js",
+    "fav": "./favourite.js",
+    "unfav": "./unfavourite.js",
+    "stop": "./stop.js"
   },
   "repository": {
     "type": "git",
