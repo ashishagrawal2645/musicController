@@ -8,6 +8,7 @@
   },
   "bin": {
     "saavn": "./cli.js",
+    "saavn-scripts": "./scripts.js",
     "connect": "./scripts.js connect",
     "play": "./scripts.js play",
     "pause": "./scripts.js pause",
