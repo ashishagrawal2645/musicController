@@ -2,9 +2,20 @@
   "name": "music-controller",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "saavn": "./cli.js",
+    "connect": "./scripts.js connect",
+    "play": "./scripts.js play",
+    "pause": "./scripts.js pause",
+    "prev": "./scripts.js prev",
+    "next": "./scripts.js next",
+    "fav": "./scripts.js fav",
+    "unfav": "./scripts.js unfav",
+    "stop": "./scripts.js stop"
   },
   "repository": {
     "type": "git",
